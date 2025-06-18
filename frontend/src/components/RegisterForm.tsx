@@ -40,8 +40,10 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
 
     try {
       await register(username, email, password);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      console.log(err);
+      // work on setting a proper error message here.
+      setError(`Registeration failed. Error ${err}`);
     } finally {
       setIsLoading(false);
     }

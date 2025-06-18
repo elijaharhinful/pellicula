@@ -1,6 +1,6 @@
-# Movie Discovery App
+# Pellicula
 
-A full-stack web application that enables movie enthusiasts to search for movies, view detailed information, and manage personal favorite collections with secure user authentication.
+A web application that enables movie enthusiasts to search for movies, view detailed information, and manage personal favorite collections with secure user authentication.
 
 ## 🎬 Features
 

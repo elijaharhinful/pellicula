@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Search, Filter, X } from 'lucide-react';
-import { Movie, Genre } from '../types';
+import type { Movie, Genre } from '../types';
 import { searchMovies, getPopularMovies, getGenres, getMoviesByGenre } from '../services/movieApi';
 import MovieCard from './MovieCard';
 import { useAuth } from '../contexts/AuthContext';
@@ -56,6 +56,7 @@ const MovieSearch: React.FC<MovieSearchProps> = ({ onMovieSelect }) => {
       setTotalPages(data.totalPages);
       setCurrentPage(1);
     } catch (err) {
+      console.log(err)
       setError('Failed to load popular movies');
     } finally {
       setLoading(false);
@@ -76,6 +77,7 @@ const MovieSearch: React.FC<MovieSearchProps> = ({ onMovieSelect }) => {
       setTotalPages(data.totalPages);
       setCurrentPage(page);
     } catch (err) {
+      console.log(err);
       setError('Failed to search movies');
       setMovies([]);
     } finally {
@@ -100,6 +102,7 @@ const MovieSearch: React.FC<MovieSearchProps> = ({ onMovieSelect }) => {
       setTotalPages(data.totalPages);
       setCurrentPage(1);
     } catch (err) {
+      console.log(err);
       setError('Failed to load movies by genre');
     } finally {
       setLoading(false);

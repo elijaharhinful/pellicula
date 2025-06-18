@@ -1,5 +1,5 @@
 import api from './api';
-import { Movie, MovieDetails, Genre } from '../types';
+import type { Movie, MovieDetails, Genre } from '../types';
 
 const TMDB_IMAGE_BASE_URL = import.meta.env.VITE_TMDB_IMAGE_BASE_URL || 'https://image.tmdb.org/t/p/w500';
 

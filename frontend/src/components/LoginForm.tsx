@@ -21,8 +21,10 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
 
     try {
       await login(email, password);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      console.log(err);
+      // work on setting a proper error message here.
+      setError(`Login failed. Error ${err}`);
     } finally {
       setIsLoading(false);
     }

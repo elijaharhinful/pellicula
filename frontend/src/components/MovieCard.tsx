@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Heart, Star, Calendar, Info } from 'lucide-react';
-import { Movie, MovieDetails } from '../types';
+import type { Movie, MovieDetails } from '../types';
 import { getImageUrl } from '../services/movieApi';
 import { useAuth } from '../contexts/AuthContext';
 
