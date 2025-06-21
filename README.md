@@ -74,6 +74,68 @@ A web application that enables movie enthusiasts to search for movies, view deta
    ```
    The frontend will run on `http://localhost:5173`
 
+## 🧪 Test Cases
+
+### **User Registration**
+- **Username**: Must be at least 3 characters long, alphanumeric characters allowed
+- **Email**: Must be a valid email format
+- **Password**: Must be at least 6 characters long
+
+```
+Example test data:
+Username: testuser123
+Email: testuser@gmail.com
+Password: password123
+```
+
+### **User Login**
+- **Email**: Must match registered email
+- **Password**: Must match registered password
+
+```
+Example test data:
+Email: testuser@gmail.com
+Password: password123
+```
+
+### **Movie Search**
+- **Search Query**: Accepts any movie title (minimum 1 character)
+- **Results**: Returns real-time results from TMDB API
+- **Filters**: Optional genre and year filtering
+
+```
+Example test data:
+Search: "Avengers"
+Genre Filter: Action (optional)
+Year Filter: 2019 (optional)
+```
+
+### **Favorites Management**
+- **Add to Favorites**: Requires user authentication
+- **Remove from Favorites**: Requires user authentication and movie must exist in user's favorites
+- **View Favorites**: Displays all user's saved movies
+
+```
+Example test flow:
+1. Login with valid credentials
+2. Search for a movie
+3. Click "Add to Favorites" button
+4. Navigate to Favorites page to verify movie was added
+5. Click "Remove" to test deletion functionality
+```
+
+### **Authentication Protected Routes**
+- **Dashboard Access**: Requires valid JWT token
+- **Favorites Operations**: Requires user authentication
+- **Profile Management**: Requires valid session
+
+```
+Test scenarios:
+- Access /dashboard without login (should redirect to login)
+- Access /favorites without login (should redirect to login)
+- Perform favorites operations without authentication (should return 401)
+```
+
 ## 📚 API Endpoints
 
 ### Authentication
