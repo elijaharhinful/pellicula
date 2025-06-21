@@ -24,8 +24,8 @@ A web application that enables movie enthusiasts to search for movies, view deta
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/movie-discovery-app.git
-   cd movie-discovery-app
+   git clone https://github.com/yourusername/pellicula.git
+   cd pellicula
    ```
 
 2. **Backend Setup**
@@ -34,13 +34,15 @@ A web application that enables movie enthusiasts to search for movies, view deta
    npm install
    ```
 
-   Create a `.env` file in the backend directory:
+   Create a `.env` file in the backend directory or rename .env.example to .env:
    ```env
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/movie-discovery
-   JWT_SECRET=your-secret-key-here
-   TMDB_API_KEY=your-tmdb-api-key
+   MONGODB_URI=mongodb://localhost:27017/pellicula
+   NODE_ENV=development
+   JWT_SECRET=your-jwt-secret-key-here
+   TMDB_API_KEY=some-api-key-from-tmdb
+   TMDB_API_ACCESS_TOKEN=some-access-token-from-tmdb
    TMDB_BASE_URL=https://api.themoviedb.org/3
+   PORT=5000
    ```
 
 3. **Frontend Setup**
@@ -51,8 +53,9 @@ A web application that enables movie enthusiasts to search for movies, view deta
 
    Create a `.env` file in the frontend directory:
    ```env
-   REACT_APP_API_URL=http://localhost:5000
-   REACT_APP_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
+   VITE_API_BASE_URL=http://localhost:5000/api/v1
+   VITE_TMDB_BASE_URL=https://api.themoviedb.org/3
+   VITE_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p/w500
    ```
 
 ### Running the Application
@@ -69,7 +72,7 @@ A web application that enables movie enthusiasts to search for movies, view deta
    cd frontend
    npm start
    ```
-   The frontend will run on `http://localhost:3000`
+   The frontend will run on `http://localhost:5173`
 
 ## 📚 API Endpoints
 
@@ -80,6 +83,13 @@ A web application that enables movie enthusiasts to search for movies, view deta
 
 ### Movies
 - `GET /movies/search?query=title` - Search movies by title
+- `GET /movies/popular` - Get popular movies
+- `GET /movies/upcoming` - Get upcoming movies
+- `GET /movies/genres` - Get all available movie genres
+- `GET /movies/genre/:genreId` - Get movies by specific genre
+- `GET /movies/year?year=2023&page=1` - Get movies by release year
+- `GET /movies/years` - Get all available years
+- `GET /movies/filter?genre=28&year=2023&page=1` - Filter movies by genre and year
 - `GET /movies/:id` - Get detailed movie information
 
 ### Favorites

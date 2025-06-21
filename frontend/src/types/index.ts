@@ -6,6 +6,7 @@ export interface Movie {
     backdrop_path: string;
     release_date: string;
     vote_average: number;
+    vote_count:number;
     genre_ids: number[];
     adult: boolean;
   }
@@ -32,6 +33,7 @@ export interface Movie {
     username: string;
     email: string;
     favourites: string[];
+    createdAt?: Date | string;
   }
   
   export interface AuthContextType {
@@ -39,5 +41,13 @@ export interface Movie {
     login: (email: string, password: string) => Promise<void>;
     register: (username: string, email: string, password: string) => Promise<void>;
     logout: () => void;
+    refreshUser: () => Promise<void>;
     loading: boolean;
   }
+
+  export interface Activity {
+  id: string;
+  type: 'favourite_added' | 'favourite_removed';
+  movieTitle: string;
+  timestamp: Date;
+}
