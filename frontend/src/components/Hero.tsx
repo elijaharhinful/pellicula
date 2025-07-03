@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { PlayCircle, StarIcon } from 'lucide-react';
-import { getUpcomingMovies, getBackdropUrl } from '../services/movieApi';
+import { getUpcomingMovies, getBackdropUrl } from '../services/temp';
 import { HeroMovieCard } from './HeroMovieCard';
 import type { Movie } from '../types';
 
@@ -61,7 +61,7 @@ export const Hero = () => {
         } else {
           // Fallback: try to get popular movies if no upcoming movies found
           try {
-            const { getPopularMovies } = await import('../services/movieApi');
+            const { getPopularMovies } = await import('../services/temp');
             const popularData = await getPopularMovies(1);
             
             if (popularData.movies && Array.isArray(popularData.movies) && popularData.movies.length > 0) {
@@ -134,7 +134,7 @@ export const Hero = () => {
           setIsUpcomingMovie(true);
         } else {
           // Fallback to popular movies
-          const { getPopularMovies } = await import('../services/movieApi');
+          const { getPopularMovies } = await import('../services/temp');
           const popularData = await getPopularMovies(1);
           
           if (popularData.movies && Array.isArray(popularData.movies) && popularData.movies.length > 0) {
