@@ -6,7 +6,7 @@ import { getFavourites, removeFromFavourites } from '../services/favoritesApi';
 import { FavouriteMovieCard } from '../components/FavouriteMovieCard';
 import { MovieModal } from '../components/MovieModal';
 import type { MovieDetails } from '../types';
-import { getMovieDetails } from '../services/temp';
+import { getMovieDetails } from '../services/movieApi';
 
 export const FavouritesPage: React.FC = () => {
   const { user } = useAuth();

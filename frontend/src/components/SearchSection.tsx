@@ -9,7 +9,7 @@ import {
   getMoviesByGenre, 
   getMoviesByYear,
   getMoviesByGenreAndYear
-} from '../services/temp';
+} from '../services/movieApi';
 import { addToFavourites, removeFromFavourites } from '../services/favoritesApi';
 import { MovieCard } from './MovieCard';
 import { useAuth } from '../contexts/AuthContext';
