@@ -1,4 +1,4 @@
-import api from './api.js';
+import api from './api';
 import type { Movie, MovieDetails, Genre } from '../types';
 
 // TMDB image base URL from environment variables with fallback
