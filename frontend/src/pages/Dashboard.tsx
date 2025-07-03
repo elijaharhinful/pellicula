@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { User, Heart, Film, Calendar, Trophy } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { getFavourites } from '../services/favporitesApi';
+import { getFavourites } from '../services/favoritesApi';
 import type { MovieDetails } from '../types';
 
 // Activity interface for user actions tracking

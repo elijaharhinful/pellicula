@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, Link } from 'react-router-dom';
 import { Heart, Film, Star, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
-import { getFavourites, removeFromFavourites } from '../services/favporitesApi';
+import { getFavourites, removeFromFavourites } from '../services/favoritesApi';
 import { FavouriteMovieCard } from '../components/FavouriteMovieCard';
 import { MovieModal } from '../components/MovieModal';
 import type { MovieDetails } from '../types';

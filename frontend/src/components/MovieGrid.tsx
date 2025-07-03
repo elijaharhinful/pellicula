@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { MovieCard } from './MovieCard';
 import { MovieModal } from './MovieModal';
 import { getPopularMovies } from '../services/movieApi';
-import { addToFavourites, getFavourites, removeFromFavourites } from '../services/favporitesApi';
+import { addToFavourites, getFavourites, removeFromFavourites } from '../services/favoritesApi';
 import { useAuth } from '../contexts/AuthContext';
 import type { Movie, MovieDetails } from '../types';
 
