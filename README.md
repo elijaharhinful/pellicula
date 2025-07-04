@@ -20,6 +20,27 @@ A web application that enables movie enthusiasts to search for movies, view deta
 - MongoDB (local installation or MongoDB Atlas)
 - TMDB API Key ([Get one here](https://www.themoviedb.org/settings/api))
 
+#### MongoDB Setup Options
+
+**Option 1: Local MongoDB**
+1. Install MongoDB Community Edition from [mongodb.com](https://www.mongodb.com/try/download/community)
+2. Start MongoDB service:
+   ```bash
+   # Windows
+   net start MongoDB
+   
+   # macOS/Linux
+   sudo systemctl start mongod
+   ```
+3. Use connection string: `mongodb://localhost:27017/pellicula`
+4. For more information on local setup of mongodb visit here: (https://www.mongodb.com/docs/manual/administration/install-community/)
+
+**Option 2: MongoDB Atlas (Cloud)**
+1. Create free account at [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+2. Create new cluster and database
+3. Get connection string from Atlas dashboard
+4. Replace `MONGODB_URI` in .env with your Atlas connection string
+
 ### Installation
 
 1. **Clone the repository**
