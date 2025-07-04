@@ -91,7 +91,7 @@ A web application that enables movie enthusiasts to search for movies, view deta
 2. **Start the Frontend**
    ```bash
    cd frontend
-   npm start
+   npm run dev
    ```
    The frontend will run on `http://localhost:5173`
 
@@ -187,10 +187,6 @@ Test scenarios:
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
